@@ -1,9 +1,12 @@
 import time
-
+import allure
 from pages.login_page import LoginPage
 from pages.signup_page import SignupPage
 
 
+@allure.title("🔐 Muvaffaqiyatli login testi")
+@allure.description("Foydalanuvchi to‘g‘ri login va parol bilan tizimga kirishi kerak.")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_register(driver):
     driver.get("https://automationexercise.com/login")
     assert "login" in driver.current_url
